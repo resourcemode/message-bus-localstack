@@ -14,23 +14,13 @@ class MessageController
      */
     public function postMessage(Request $request, Response $response)
     {
-        if (empty($request->getParam('accountno'))) {
-            return json_encode([
-                'errors' => [
-                    'title' => 'Invalid param',
-                    'detail' => 'Missing account number'
-                ]
-            ]);
-        }
-
         // store request in our RISK DB Service
         // send request to third party
         // store response to RISK DB Service
         // send response to client if there's a callback or near real-time approach
-
         return json_encode([
             'data' => [
-                'account_no' => $request->getParam('accountno'),
+                'account_no' => $requestData = $request->getParsedBody()['accountno'],
                 'message' => 'Processing, we are sending your data to our vendors',
             ]
         ]);
@@ -44,8 +34,16 @@ class MessageController
      */
     public function getMessage(Request $request, Response $response)
     {
-        // send get request to Risk DB Service
+        if (empty($request->getParam('accountno'))) {
+            return json_encode([
+                'errors' => [
+                    'title' => 'Invalid param',
+                    'detail' => 'Missing account number'
+                ]
+            ]);
+        }
 
+        // send get request to Risk DB Service
         // return response to client
         return json_encode([
             'data' => [
