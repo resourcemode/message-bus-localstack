@@ -1,4 +1,6 @@
 /vendor/
 /logs/*
 !/logs/README.md
-.idea/*
+
+### PHPStore Related Ignores
+.idea/
