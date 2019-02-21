@@ -22,6 +22,12 @@ class MessageController
                 ]
             ]);
         }
+
+        // store request in our RISK DB Service
+        // send request to third party
+        // store response to RISK DB Service
+        // send response to client if there's a callback or near real-time approach
+
         return json_encode([
             'data' => [
                 'account_no' => $request->getParam('accountno'),
@@ -38,6 +44,9 @@ class MessageController
      */
     public function getMessage(Request $request, Response $response)
     {
+        // send get request to Risk DB Service
+
+        // return response to client
         return json_encode([
             'data' => [
                 'account_no' => $request->getParam('accountno'),
