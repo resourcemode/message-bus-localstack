@@ -1,6 +1,6 @@
 <?php
 
-namespace MessageBus\Sqs\Command;
+namespace MessageBus\Command\Sqs;
 
 interface SqsCommandInterface
 {

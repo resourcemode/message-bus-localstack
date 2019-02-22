@@ -1,6 +1,6 @@
 <?php
 
-namespace MessageBus\Sqs\Command;
+namespace MessageBus\Command\Sqs;
 
 use Aws\Exception\AwsException;
 
@@ -10,12 +10,15 @@ class SendCommand extends SqsAbstract
     {
         parent::__construct();
         $this->params = [
-            'DelaySeconds' => 10,
+            'DelaySeconds' => 2,
             'MessageAttributes' => [
-                'accountno' => $params['accountno'],
+                'accountno' => [
+                    'DataType' => 'String',
+                    'StringValue' => (string) $params['accountno']
+                ],
                 'Person' => [
-                    'FirstName' => 'Michael',
-                    'LastName' => 'Favila'
+                    'DataType' => 'String',
+                    'StringValue' => 'Luke',
                 ],
             ],
             'MessageBody' => 'Send Profile for client ' . $params['accountno'],
@@ -26,11 +29,14 @@ class SendCommand extends SqsAbstract
     public function message()
     {
         try {
-            $result = $this->sendMessage($this->params);
-            var_dump($result);
+            $result = $this->client->sendMessage($this->params);
         } catch (AwsException $e) {
             // output error message if fails
             error_log($e->getMessage());
+            $result = $e->getMessage();
         }
+
+        file_put_contents('senddummydata.txt', $result);
+        return $result;
     }
 }

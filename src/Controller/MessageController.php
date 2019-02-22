@@ -3,6 +3,8 @@ namespace MessageBus\Controller;
 
 use Slim\Http\Request;
 use Slim\Http\Response;
+use MessageBus\Command\Sqs\ReceiveCommand;
+use MessageBus\Command\Sqs\SendCommand;
 
 class MessageController
 {
@@ -14,6 +16,11 @@ class MessageController
      */
     public function postMessage(Request $request, Response $response)
     {
+        $requestData = $request->getParsedBody();
+        // send to queue
+        $sendCommand = new SendCommand($requestData);
+        $sendCommand->message();
+
         // store request in our RISK DB Service
         // send request to third party
         // store response to RISK DB Service
@@ -42,6 +49,10 @@ class MessageController
                 ]
             ]);
         }
+
+        // get data from queue
+        $receiveCommand = new ReceiveCommand([]);
+        $receiveCommand->message();
 
         // send get request to Risk DB Service
         // return response to client

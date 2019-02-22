@@ -1,0 +1,46 @@
+Model Data
+----------
+Data can be retrieved from the model object using the get() method of the
+model (e.g., `$result->get($key)`) or "accessing the result like an
+associative array (e.g. `$result['key']`). You can also execute JMESPath
+expressions on the result data using the search() method.
+
+{
+    "Messages": [
+        {
+            "MessageId": "78be208b-7e5b-46c3-b960-b17690f3af24",
+            "ReceiptHandle": "AQEBHHymCU5jNGrlTOPCGUXLEYM8skwP\/Mzkhgvn9LGAbSMn\/sUY14PyIWh\/a7ZaryPdcp3uEZMYa\/rQOyimF0yIrYSAtRU5gLzrrX8QGsuh1qgvSnFyF8+Svt+Zo+7d8ynkMsUFA4cLorXE+Wp7DQMze6sWxdMsSquMdh3AZKsP6W0QeYzWx7eMCciN5yi2cCiTJQdBN6+fahqqQkRMdxe2Y+t0hxLxKM5TJox\/mRc4\/hh592R+oVwv8LkweOMYQdss4H91U2inT+54iU+ZaAeaS17i6zLuVaW3TxnTw9PylylTvAvL7ks1vtqo6+9h9mNsQPrVqgSwiTxv625pylQ6TxK2N5qIP1AmZQhb3uvm6vsZZVbT\/zOE0cdaohql0kMNYuClHau1R2z75OBv6ty7fw==",
+            "MD5OfBody": "1bb511b38272b3e43194896fc4752916",
+            "Body": "Send Profile for client 9190905001Z",
+            "Attributes": {
+                "SentTimestamp": "1550823012136"
+            },
+            "MD5OfMessageAttributes": "c3a9481bb7e5d04a3a7295eeff069892",
+            "MessageAttributes": {
+                "Person": {
+                    "StringValue": "Luke",
+                    "DataType": "String"
+                },
+                "accountno": {
+                    "StringValue": "9190905001Z",
+                    "DataType": "String"
+                }
+            }
+        }
+    ],
+    "@metadata": {
+        "statusCode": 200,
+        "effectiveUri": "https:\/\/sqs.ap-southeast-1.amazonaws.com\/272600878028\/CLM",
+        "headers": {
+            "x-amzn-requestid": "40a23f14-0886-5662-abdf-6bfdb8362880",
+            "date": "Fri, 22 Feb 2019 08:10:24 GMT",
+            "content-type": "text\/xml",
+            "content-length": "1312"
+        },
+        "transferStats": {
+            "http": [
+                []
+            ]
+        }
+    }
+}

@@ -1,6 +1,6 @@
 <?php
 
-namespace MessageBus\Sqs\Command;
+namespace MessageBus\Command\Sqs;
 
 use Aws\Sqs\SqsClient;
 
@@ -28,7 +28,7 @@ abstract class SqsAbstract implements SqsCommandInterface
     {
         $this->client = new SqsClient([
             'profile' => 'default',
-            'region' => 'us-west-2',
+            'region' => 'ap-southeast-1',
             'version' => '2012-11-05'
         ]);
     }
