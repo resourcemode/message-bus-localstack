@@ -14,7 +14,7 @@ abstract class SqsAbstract implements SqsCommandInterface
     /**
      * @var string
      */
-    protected $queueUrl = 'https://sqs.ap-southeast-1.amazonaws.com/272600878028/CLM';
+    protected $queueUrl = 'http://localhost:4576/queue/1688';
 
     /**
      * @var array
@@ -28,7 +28,7 @@ abstract class SqsAbstract implements SqsCommandInterface
     {
         $this->client = new SqsClient([
             'profile' => 'default',
-            'region' => 'ap-southeast-1',
+            'region' => 'us-east-1',
             'version' => '2012-11-05'
         ]);
     }

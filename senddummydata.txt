@@ -8,15 +8,18 @@ expressions on the result data using the search() method.
 {
     "MD5OfMessageBody": "1bb511b38272b3e43194896fc4752916",
     "MD5OfMessageAttributes": "c3a9481bb7e5d04a3a7295eeff069892",
-    "MessageId": "78be208b-7e5b-46c3-b960-b17690f3af24",
+    "MessageId": "2e51a93a-aef0-465a-a65c-0c1e7079daf5",
     "@metadata": {
         "statusCode": 200,
-        "effectiveUri": "https:\/\/sqs.ap-southeast-1.amazonaws.com\/272600878028\/CLM",
+        "effectiveUri": "http:\/\/localhost:4576\/queue\/1688",
         "headers": {
-            "x-amzn-requestid": "072232f9-1586-5e4d-83bb-6610a52280af",
-            "date": "Fri, 22 Feb 2019 08:10:12 GMT",
-            "content-type": "text\/xml",
-            "content-length": "459"
+            "server": "BaseHTTP\/0.3 Python\/2.7.15",
+            "date": "Thu, 04 Apr 2019 08:07:37 GMT",
+            "content-type": "text\/plain; charset=UTF-8",
+            "content-length": "579",
+            "access-control-allow-origin": "*",
+            "access-control-allow-methods": "HEAD,GET,PUT,POST,DELETE,OPTIONS,PATCH",
+            "access-control-allow-headers": "authorization,content-type,content-md5,cache-control,x-amz-content-sha256,x-amz-date,x-amz-security-token,x-amz-user-agent"
         },
         "transferStats": {
             "http": [
